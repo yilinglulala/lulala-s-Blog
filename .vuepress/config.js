@@ -37,12 +37,16 @@ module.exports = {
         "icon": "reco-message",
         "items": [
           {
-            "text": "vuepress-reco",
+            "text": "reco",
             "link": "/docs/theme-reco/"
           },
           {
             "text": "life",
             "link": "/docs/lifes/"
+          },
+          {
+            "text": "reco1",
+            "link": "/docs/theme-reco1/"
           }
         ]
       },
@@ -73,7 +77,6 @@ module.exports = {
         "test"
       ],
       "/docs/lifes/":[
-        "",
         "music"
       ]
     },
