@@ -119,6 +119,6 @@ module.exports = {
   },
   // 使用插件
   "plugins":[
-    require('./public/libs/documentClick.js')
+    // require('./public/libs/documentClick.js')
   ]
 }
