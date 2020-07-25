@@ -20,6 +20,7 @@ module.exports = {
   ],
   "theme": "reco",
   "themeConfig": {
+    // 导航配置
     "nav": [
       {
         "text": "Home",
@@ -40,8 +41,8 @@ module.exports = {
             "link": "/docs/theme-reco/"
           },
           {
-            "text": "生活",
-            "link": "/docs/theme-reco/"
+            "text": "life",
+            "link": "/docs/lifes/"
           }
         ]
       },
@@ -51,8 +52,13 @@ module.exports = {
         "items": [
           {
             "text": "GitHub",
-            "link": "https://github.com/recoluan",
+            "link": "https://github.com/yilinglulala",
             "icon": "reco-github"
+          },
+          {
+            "text": "简书",
+            "link": "https://www.jianshu.com/u/0c0fe30e0577",
+            "icon": "reco-jianshu"
           }
         ]
       }
@@ -65,6 +71,10 @@ module.exports = {
         "plugin",
         "api",
         "test"
+      ],
+      "/docs/lifes/":[
+        "",
+        "music"
       ]
     },
     "type": "blog",
