@@ -45,8 +45,8 @@ module.exports = {
             "link": "/docs/lifes/"
           },
           {
-            "text": "reco1",
-            "link": "/docs/theme-reco1/"
+            "text": "网站导航",
+            "link": "/docs/web-nav/"
           }
         ]
       },
@@ -116,5 +116,9 @@ module.exports = {
   },
   "markdown": {
     "lineNumbers": true
-  }
+  },
+  // 使用插件
+  "plugins":[
+    require('./public/libs/documentClick.js')
+  ]
 }
