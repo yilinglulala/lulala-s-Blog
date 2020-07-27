@@ -117,7 +117,8 @@ module.exports = {
     "author": "xuyiling",
     "authorAvatar": "/avatar.png",
     "record": "happy",
-    "startYear": "2017"
+    "startYear": "2020",
+    "sidebarDepth": 4
   },
   "markdown": {
     "lineNumbers": true
