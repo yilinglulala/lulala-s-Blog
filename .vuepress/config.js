@@ -78,6 +78,14 @@ module.exports = {
       ],
       "/docs/lifes/":[
         "music"
+<<<<<<< HEAD
+=======
+      ],
+      "/blogs/React/":[
+        "01安装",
+        "02响应式数据",
+        "react面试"
+>>>>>>> 04fc4c759ac3f9b4c27933a8ad701cbd6b06af5a
       ]
     },
     "type": "blog",
