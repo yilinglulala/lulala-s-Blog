@@ -7,7 +7,9 @@ categories:
  - 其他
 ---
 
-## 提交
+ http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html 
+
+## 提交<Badge text="beta" type="warning"/>
 
 ```shell
 git add .
@@ -63,6 +65,14 @@ git push origin master
 git push -f origin master
 ```
 
+## 分支
+
+### 切换分支
+
+
+
+
+
 ## 遇到问题
 
 - ### 提交被拒绝
@@ -72,5 +82,13 @@ git push -f origin master
 ```sh
 // 强制提交
 git push -f origin master
+```
+
+> ###  Pulling is not possible because you have unmerged files.
+
+```sh
+git add .
+git commit -m 'xxx'
+git pull origin master
 ```
 

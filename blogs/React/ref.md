@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
-title: ref
-=======
 title: react ref
->>>>>>> 04fc4c759ac3f9b4c27933a8ad701cbd6b06af5a
 date: 2020-07-24
 tags:
  - react
@@ -12,3 +8,15 @@ categories:
 ---
 
 关于ref
+
+```jsx {5}
+<input id="myinput" 
+    type="text" 
+    value={this.state.name} 
+    onChange={this.myChange.bind(this)} 
+    ref = {(input)=>{this.input = input}}/>
+```
+
+`this.input` 指向的就是 myinput这个元素
+
+因此需要获得输入值就可以用 `this.input.value` 来获取

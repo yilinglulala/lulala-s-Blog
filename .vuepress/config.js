@@ -1,7 +1,8 @@
 module.exports = {
   "title": "lulala`s Blog",
   "description": "lulala`s blog",
-  "dest": "public",
+  "base":"/lulala-s-Blog/",
+  // "dest": "public",
   "head": [
     [
       "link",
@@ -78,14 +79,11 @@ module.exports = {
       ],
       "/docs/lifes/":[
         "music"
-<<<<<<< HEAD
-=======
       ],
       "/blogs/React/":[
         "01安装",
         "02响应式数据",
         "react面试"
->>>>>>> 04fc4c759ac3f9b4c27933a8ad701cbd6b06af5a
       ]
     },
     "type": "blog",
@@ -120,13 +118,14 @@ module.exports = {
     "author": "xuyiling",
     "authorAvatar": "/avatar.png",
     "record": "happy",
-    "startYear": "2017"
+    "startYear": "2020",
+    "sidebarDepth": 4
   },
   "markdown": {
     "lineNumbers": true
   },
   // 使用插件
   "plugins":[
-    // require('./public/libs/documentClick.js')
+    // require('../libs/documentClick.js')
   ]
 }

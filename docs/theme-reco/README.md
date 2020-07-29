@@ -55,3 +55,4 @@ date: 2020-05-29
 例如我的图片放在.vuepress - public 下，我的图片就应该这样写`![docs-add](/images/docs-add.png)`
 
 ![](/images/docs-reco1.png)
+<img :src="$withBase('/images/image-20200728152315912.png')" >
