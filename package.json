@@ -4,8 +4,7 @@
   "author": "reco_luan",
   "scripts": {
     "dev": "vuepress dev .",
-    "build": "vuepress build .",
-    "deploy":"bash deploy.sh"
+    "build": "vuepress build ."
   },
   "devDependencies": {
     "vuepress": "1.5.0",
