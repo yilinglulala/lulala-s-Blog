@@ -27,9 +27,11 @@ https://learn.freecodecamp.one/
 
 [monica]( https://www.aboutmonica.com/blog )
 
+[css-trick](https://css-tricks.com/)
+
 ## 博客社区
 
-[掘金]()
+[掘金]( https://juejin.im/ )
 
 ## 视频网站
 
