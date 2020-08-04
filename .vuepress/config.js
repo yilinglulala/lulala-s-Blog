@@ -1,7 +1,8 @@
 module.exports = {
   "title": "lulala`s Blog",
   "description": "lulala`s blog",
-  "dest": "public",
+  "base":"/lulala-s-Blog/",
+  // "dest": "public",
   "head": [
     [
       "link",
@@ -125,6 +126,6 @@ module.exports = {
   },
   // 使用插件
   "plugins":[
-    // require('./public/libs/documentClick.js')
+    // require('../libs/documentClick.js')
   ]
 }

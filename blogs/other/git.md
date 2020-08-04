@@ -7,7 +7,9 @@ categories:
  - 其他
 ---
 
-## 提交
+ http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html 
+
+## 提交<Badge text="beta" type="warning"/>
 
 ```shell
 git add .
@@ -29,6 +31,12 @@ git push origin master
 git pull https://github.com/yilinglulala/lulala-s-Blog.git master
 //如果已经绑定了远程地址
 git pull origin master
+```
+
+如果报错`refusing to merge unrelated histories`
+
+```sh
+git pull origin master --allow-unrelated-histories
 ```
 
 ## 远程
@@ -57,6 +65,14 @@ git push origin master
 git push -f origin master
 ```
 
+## 分支
+
+### 切换分支
+
+
+
+
+
 ## 遇到问题
 
 - ### 提交被拒绝
@@ -66,5 +82,13 @@ git push -f origin master
 ```sh
 // 强制提交
 git push -f origin master
+```
+
+> ###  Pulling is not possible because you have unmerged files.
+
+```sh
+git add .
+git commit -m 'xxx'
+git pull origin master
 ```
 
