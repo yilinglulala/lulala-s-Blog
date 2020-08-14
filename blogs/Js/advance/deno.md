@@ -161,8 +161,15 @@ deno run --allow-net F:/work/frontEnd/wiseidc/test.ts
    ipconfig /flushdns
    ```
 
+## 实例
 
-## oak实例
+### oak
 
+## 常用API
 
+| API         | 描述           |      |
+| ----------- | -------------- | ---- |
+| Deno.cwd()  | 当前文件夹路径 |      |
+| Deno.run(） |                |      |
+|             |                |      |
 
