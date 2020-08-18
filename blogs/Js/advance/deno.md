@@ -13,6 +13,8 @@ categories:
 
 [deno API](https://doc.deno.land/https/github.com/denoland/deno/releases/latest/download/lib.deno.d.ts)
 
+[发布deno模块](https://dev.to/craigmorten/how-to-publish-deno-modules-2cg6)
+
 ## 安装
 
 window系统，一直没有安装成功，知乎上找到这篇教程，终于安装成功了。

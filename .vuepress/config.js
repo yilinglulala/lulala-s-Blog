@@ -114,7 +114,7 @@ module.exports = {
     "logo": "/logo.png",
     "search": true,
     "searchMaxSuggestions": 10,
-    "lastUpdated": "Last Updated",
+    "lastUpdated": "Last Updated",// 文档更新时间：每个文件git最后提交的时间
     "author": "xuyiling",
     "authorAvatar": "/avatar.png",
     "record": "happy",
