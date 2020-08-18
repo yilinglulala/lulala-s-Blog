@@ -9,6 +9,8 @@ categories:
 
 ## background
 
+![image-20200818161516741](https://gitee.com/xuyiling/gopic/raw/master/img/20200818161523.png)
+
 ### background-clip：背景剪切
 
 padding-box
@@ -17,7 +19,7 @@ padding-box
 
 ### background-image：背景图片
 
-支持背景图片渐变
+支持背景图片渐变 [jsbin](http://js.jirengu.com/sonabatayu/3/edit)
 
 ## box-shadow
 
