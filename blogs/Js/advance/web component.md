@@ -11,6 +11,8 @@ categories:
 
 [css-tricks - web component](https://css-tricks.com/a-bit-on-web-component-libraries/)
 
+[fast](https://fast.design/docs/introduction/#where-should-i-start)
+
 ## 自定义元素
 
  自定义元素的名称必须包含 **连词线**，用与区别原生的 HTML 元素。所以，`<user-card>` 不能写成 `<userCard>`
