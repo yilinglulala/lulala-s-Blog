@@ -60,7 +60,15 @@ test('test hello',()=>{
 | ----------------- | ------------------------------ |
 | coverageDirectory | 生成代码覆盖率文件的文件夹名称 |
 |                   |                                |
-|                   |                                |
+
+## API
+
+| API                  | 作用 | 说明                     |
+| -------------------- | ---- | ------------------------ |
+| expect.assertions(1) | 断言 | 断言expect至少执行过一次 |
+|                      |      |                          |
+
+
 
 ## 匹配器
 
@@ -86,13 +94,6 @@ test('test hello',()=>{
 | toBeGreaterThanOrEqual | 小于等于 | expect(count).toBeGreaterThanOrEqual(10) |
 | toBeCloseTo            | 约等于   | expect(0.1+ 0.2).toBeCloseTo(0.3)        |
 
-| 匹配器 | 作用 |      |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
-|        |      |      |
-|        |      |      |
-
 ## 查看代码覆盖率
 
 ### 终端
@@ -109,5 +110,123 @@ test('test hello',()=>{
 
 `yarn add  @babel/core@7.4.5 @babel/preset-env@7.4.5  --dev`
 
+**配置**
 
+.babelrc
+
+```js
+{
+    "presets":[
+        [
+                "@babel/preset-env",{
+                "targets":{
+                    "node":"current"
+                }
+            }
+        ]
+    ]
+}
+```
+
+## 异步测试
+
+### 接收回调函数
+
+```js
+export const fetchData = (fn)=>{
+    axios.get('http://localhost:3000/data').then((response)=>{
+        fn(response.data)
+    })
+}
+// 接收回调函数
+test('fetchData 测试',(done)=>{
+   fetchData((data)=>{
+       expect(data).toEqual({
+           name: 'xyl'
+       })
+       done()
+    })
+})
+```
+
+###  返回promise
+
+```js
+export const fetchData2 = () =>{
+    return axios.get('http://localhost:3000/data')
+}
+
+
+test('fetchData2 测试',(done)=>{
+    fetchData2().then((data)=>{
+        expect(data.data).toEqual({
+            name: 'xyl'
+        })
+        done()
+    })
+})
+```
+
+### 会发生错误的异步
+
+```js
+export const fetchData3 = ()=>{
+    return axios.get('http://localhost:3000/data1')
+}
+// 测试会发生错误的异步
+test('无法访问的接口 测试',(done)=>{
+    expect.assertions(1)  // 断言，必须执行一次expect
+    fetchData3().catch((e)=>{
+        console.log(e);
+        expect(e.toString().includes(404)).toBe(true)
+        done()
+    })
+})
+```
+
+### async/await
+
+```js
+test('fetchData2 测试',async ()=>{
+    const data = await fetchData2()
+    expect(data.data).toEqual({
+        name: 'xyl'
+    })   
+})
+```
+
+## 钩子函数
+
+| 名称          | 说明                                         |      |
+| ------------- | -------------------------------------------- | ---- |
+| beforeAll(fn) | 在所有测试用例之前进行执行                   |      |
+| afterAll()    | 在完成所有测试用例之后才执行的函数           |      |
+| beforeEach()  | 在每个测试用例前都会执行一次的钩子函数       |      |
+| afterEach()   | 在每次测试用例完成测试之后执行一次的钩子函数 |      |
+
+### 钩子函数作用域
+
+
+
+## 分组
+
+```js
+describe('分组1',()=>{
+    test('测试1',()=>{
+        // to do sth
+    })
+    test('测试2',()=>{
+        // to do sth
+    })
+})
+describe('分组2',()=>{
+    test('测试1',()=>{
+        // to do sth
+    })
+    test('测试2',()=>{
+        // to do sth
+    })
+
+})
+```
 
