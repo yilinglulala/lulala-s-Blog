@@ -17,6 +17,8 @@ https://learn.freecodecamp.one/
 
 [TypeScript](https://www.tslang.cn/docs/home.html)
 
+[30secondsofcode](https://www.30secondsofcode.org/css/p/1)
+
 ## 大佬博客
 
 [张鑫旭]( https://www.zhangxinxu.com/wordpress/ )

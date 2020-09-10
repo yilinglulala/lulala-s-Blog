@@ -33,7 +33,7 @@ padding-box
 
 ## overflow
 
-### 滚动锚点
+### overflow-anchor：滚动锚点
 
 [张鑫旭](https://www.zhangxinxu.com/wordpress/2020/08/css-overflow-anchor/?shrink=1)
 
@@ -46,3 +46,12 @@ overflow-anchor: auto | none
 | auto | 浏览器自己决定滚动锚定的行为 | 默认 |
 | none | 禁止滚动锚定的行为           |      |
 
+## transform
+
+### transform-origin：变形原点
+
+更改一个元素变形的原点
+
+```css
+transform-origin: left;
+```
