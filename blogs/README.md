@@ -1,3 +1,14 @@
+---
+title: git
+date: 2020-07-26
+tags:
+ - git
+categories: 
+ - 其他
+---
+
+
+
 ## 渐变字体
 
 ![](F:\learning\lulala-s-Blog\.vuepress\public\images\image-20200725180146259.png)
