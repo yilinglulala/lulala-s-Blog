@@ -11,9 +11,13 @@ categories:
 
 https://learn.freecodecamp.one/
 
+[HTML&CSS](https://learn.shayhowe.com/)
+
 [正则表达式](https://deerchao.cn/tutorials/regex/regex.htm)
 
 [TypeScript](https://www.tslang.cn/docs/home.html)
+
+[30secondsofcode](https://www.30secondsofcode.org/css/p/1)
 
 ## 大佬博客
 
