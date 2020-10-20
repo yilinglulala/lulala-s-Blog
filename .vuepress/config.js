@@ -146,7 +146,7 @@ module.exports = {
       //先安装在配置， npm install @vuepress-reco/vuepress-plugin-kan-ban-niang --save
       "@vuepress-reco/vuepress-plugin-kan-ban-niang",
       {
-        theme: ['haru1', 'haru2', 'haruto', 'koharu', 'izumi', 'shizuku', 'wanko', 'miku', 'z16'],
+        theme: ['wanko','haruto', 'koharu', 'izumi', 'shizuku', 'miku', 'z16','haru2','haru1'],
         clean: false,
         messages: {
           welcome: '我是lookroot欢迎你的关注 ',

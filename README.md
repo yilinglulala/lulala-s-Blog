@@ -1,7 +1,7 @@
 ---
 home: true
-heroText: vuepress-theme-reco
-tagline: A simple and beautiful vuepress blog theme.
+heroText: Hello~ I am lulala~
+tagline: 欢迎来到鹿啦啦博客~
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
@@ -14,7 +14,7 @@ tagline: A simple and beautiful vuepress blog theme.
 bgImageStyle: {
   height: '450px'
 }
-isShowTitleInHome: false
+isShowTitleInHome: true
 actionText: Guide
 actionLink: /views/other/guide
 features:
