@@ -128,6 +128,7 @@ module.exports = {
   // 使用插件
   "plugins":[
     // require('../libs/documentClick.js')
+    'copy-code',
     ["@vuepress-yard/vuepress-plugin-window",{
       title: "欢迎关注我的公众号",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
       contentInfo: {
