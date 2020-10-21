@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: Hello~ I am lulala~
-tagline: 欢迎来到鹿啦啦博客~
+tagline: 欢迎来到 *鹿啦啦* 博客~
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
