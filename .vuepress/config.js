@@ -116,7 +116,8 @@ module.exports = {
     "searchMaxSuggestions": 10,
     "lastUpdated": "Last Updated",// 文档更新时间：每个文件git最后提交的时间
     "author": "xuyiling",
-    "authorAvatar": "/avatar.png",
+    // "authorAvatar": "/avatar.png",
+    "authorAvatar": "/logo.png",
     "record": "happy",
     "startYear": "2020",
     "sidebarDepth": 4
