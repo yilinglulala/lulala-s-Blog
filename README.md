@@ -12,7 +12,7 @@ tagline: 欢迎来到 鹿啦啦 博客~
 #   borderRadius: '1rem',
 # }
 bgImageStyle: {
-  height: '450px'
+  height: '40vh'
 }
 isShowTitleInHome: true
 actionText: Guide
