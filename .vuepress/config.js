@@ -116,7 +116,8 @@ module.exports = {
     "searchMaxSuggestions": 10,
     "lastUpdated": "Last Updated",// 文档更新时间：每个文件git最后提交的时间
     "author": "xuyiling",
-    "authorAvatar": "/avatar.png",
+    // "authorAvatar": "/avatar.png",
+    "authorAvatar": "/logo.png",
     "record": "happy",
     "startYear": "2020",
     "sidebarDepth": 4
@@ -127,6 +128,7 @@ module.exports = {
   // 使用插件
   "plugins":[
     // require('../libs/documentClick.js')
+    'copy-code',
     ["@vuepress-yard/vuepress-plugin-window",{
       title: "欢迎关注我的公众号",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
       contentInfo: {
@@ -146,7 +148,7 @@ module.exports = {
       //先安装在配置， npm install @vuepress-reco/vuepress-plugin-kan-ban-niang --save
       "@vuepress-reco/vuepress-plugin-kan-ban-niang",
       {
-        theme: ['haru1', 'haru2', 'haruto', 'koharu', 'izumi', 'shizuku', 'wanko', 'miku', 'z16'],
+        theme: ['wanko','haruto', 'koharu', 'izumi', 'shizuku', 'miku', 'z16','haru2','haru1'],
         clean: false,
         messages: {
           welcome: '我是lookroot欢迎你的关注 ',

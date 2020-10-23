@@ -1,3 +1,12 @@
+---
+title: JEST - 自动测试
+date: 2020-10-20
+tags:
+ - 测试
+categories: 
+ - Js
+---
+
 ## 安装
 
 `cnpm i jest -D`

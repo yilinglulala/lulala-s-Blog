@@ -2,7 +2,7 @@
 title: 文件处理
 date: 2020-08-18
 tags:
- - Buffer
+ - ArrayBuffer
  - audio
 categories: 
  - Js

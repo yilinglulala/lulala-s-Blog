@@ -43,10 +43,12 @@ categories:
 
 
 
-| name   | 说明     |
-| ------ | -------- |
-| \<nav> | 导航元素 |
-|        |          |
+| name     | 说明     |
+| -------- | -------- |
+| \<nav>   | 导航元素 |
+| <header> | 头部元素 |
+| <main>   | 主体元素 |
+| <footer> | 脚部元素 |
 
 ![](https://gitee.com/xuyiling/gopic/raw/master/img/20200826173512.png)
 
