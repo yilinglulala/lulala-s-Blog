@@ -6,3 +6,13 @@ vue add vue-next //重点 执行这行,会把2.0代码改为3.0的, vue-router, 
 npm run serve
 ```
 
+## Vue2与Vue3的对比
+
+- 对TypeScript支持不友好(所有属性都放在了this对象上，难以推倒组件的数据类型)
+- 大量的API挂载在Vue对象的原型上，难实现TreeShaking。
+- 架构层面对跨平台dom渲染开发支持不友好
+- CompositionAPI。受ReactHook启发
+- 对虚拟DOM进行了重写、对模板的编译进行了优化操作....
+
+
+
