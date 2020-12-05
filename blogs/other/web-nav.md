@@ -19,6 +19,26 @@ https://learn.freecodecamp.one/
 
 [30secondsofcode](https://www.30secondsofcode.org/css/p/1)
 
+### CSS
+
+https://lhammer.cn/You-need-to-know-css/#/zh-cn/
+
+http://css-tricks.neatbang.com/
+
+https://animista.net/play/basic
+
+![image-20201129125122587](https://gitee.com/xuyiling/gopic/raw/master/img/20201129125122.png)
+
+[loading动画](https://tobiasahlin.com/spinkit/)
+
+### 面试
+
+[前端进阶之道 - yck](https://yuchengkai.cn/docs/frontend/)
+
+[木易杨前端进阶](https://muyiy.cn/question/)
+
+[图解前端](https://lucifer.ren/fe-interview/#/)
+
 ## 大佬博客
 
 [张鑫旭]( https://www.zhangxinxu.com/wordpress/ )
