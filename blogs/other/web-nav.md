@@ -19,6 +19,10 @@ https://learn.freecodecamp.one/
 
 [30secondsofcode](https://www.30secondsofcode.org/css/p/1)
 
+### 算法
+
+https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/
+
 ### CSS
 
 https://lhammer.cn/You-need-to-know-css/#/zh-cn/
@@ -64,3 +68,5 @@ https://animista.net/play/basic
 ## 工具
 
 [正则表达式 ihateregex](https://ihateregex.io/playground)
+
+[特殊字符转义大全](https://www.cnblogs.com/jkj-jim/p/6364658.html)
