@@ -35,3 +35,36 @@ for (var f of flat(arr)) {
 let arr
 
 ![image-20200908210922338](C:\Users\xuyiling\AppData\Roaming\Typora\typora-user-images\image-20200908210922338.png)
+
+## 深拷贝
+
+### JSON.parse(JSON.stringify(xxx))
+
+缺点：
+
+1. function ，undefined等无法拷贝
+
+### 递归
+
+```js
+function deepcopy(obj) {
+    let newobj = Array.isArray(obj) ? [] : {}; 
+    // 方式2：let newobj = obj.constructor()
+    for (let i in obj) {
+        if(obj.hasOwnProperty(i)){
+            if (typeof obj[i] === "object" && obj!==null) {
+                newObj[i] = deepCopy(obj[i]);
+            } else {
+                newobj[i] = obj[i]
+            }
+        }
+    }
+    return newObj;
+}
+```
+
+注意：
+
+> for...in 会把原型上的属性也遍历出来
+>
+> obj.hasOwnProperty(key) 可以用这个方法判断是否是自身属性

@@ -24,3 +24,13 @@ imported 节点可以试试任何节点类型。
 document.importNode(node,deep)
 ```
 
+## node
+
+### nodeType
+
+| 值   | 说明       |      |
+| ---- | ---------- | ---- |
+| 1    | 标签       |      |
+|      |            |      |
+| 3    | 文本，text |      |
+
