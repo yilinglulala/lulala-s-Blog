@@ -7,6 +7,15 @@ categories:
  - Js
 ---
 
+## 遍历
+
+```
+for ... in
+for ... of
+```
+
+
+
 ## 扁平化
 
 ```js

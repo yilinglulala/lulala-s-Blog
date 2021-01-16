@@ -19,6 +19,39 @@ categories:
 
 可以理解为{}就是一个块
 
+## 迭代
+
+> 对象不是可迭代对象
+
+可迭代对象可用 `for in` `for of` 遍历
+
+迭代对象是实现了`Symbol.iterator`方法的对象
+
+```js
+// 将 Object 变成可迭代对象
+obj[Symbo1.iterator] = function () {
+    //迭代协议
+    let values = Object.values(obj); 
+    let index = 0;
+    return {
+        next() {
+            if (index >= values.length) {
+                return {
+                    done: true
+                }
+            } else {
+                return {
+                    done: false,
+                    value: values[index++]
+                }
+            }
+        }
+    }
+}
+```
+
+
+
 ## 解构赋值
 
 交换两个值
