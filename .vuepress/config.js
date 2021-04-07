@@ -1,8 +1,8 @@
 module.exports = {
   "title": "lulala`s Blog",
   "description": "lulala`s blog",
-  "base":"/lulala-s-Blog/",
-  // "dest": "public",
+  "base":"/lulala-blog/dist/",
+  "dest": "../lulala-blog/dist",
   "head": [
     [
       "link",
@@ -134,7 +134,7 @@ module.exports = {
       contentInfo: {
         // title: "欢迎关注我的公众号",
         needImg: true,
-        imgUrl: "https://linmsen.oss-cn-hangzhou.aliyuncs.com/blog/picture/wx_8.jpg",
+        imgUrl: "https://gitee.com/xuyiling/gopic/raw/master/img/20210327112640.png",
         // content: "喜欢博皮可以到博客园关注教程",
         contentStyle: ""
       },

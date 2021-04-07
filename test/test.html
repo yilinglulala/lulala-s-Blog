@@ -1,23 +1,43 @@
+<!--
+ * @Description: file content
+ * @Author: xuyiling
+ * @Date: 2020-08-18 23:04:11
+ * @LastEditTime: 2021-04-06 22:04:53
+ * @LastEditors: xuyiling
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        var myPow = function (x, n) {
-                let i = 0
-                let res = 1
-                if (n == 0) { return 1 }
-                while (i < n) {
-                    res = res*x
-                    i++
+        Function.prototype.myBind = function (context) {
+            var _this = this
+            var args = [...arguments].slice(1)// 第一个参数是this指向
+            // 返回一个函数
+            return function F() {
+                // 因为返回了一个函数，我们可以 new F()，所以需要判断
+                if (this instanceof F) {
+                    console.log(1);
+                    return new _this(...args, ...arguments)
                 }
-                return res
-            };
-        myPow(2, 3)
+                console.log(2, this);
+                return _this.apply(context, args.concat(...arguments))
+            }
+        }
+        let fn = function () {
+            this.a = 666
+            console.log(this.a);
+        }
+        let fn1 = fn.myBind({ a: 333 }, 1)
+        console.dir(fn1);
+        new fn1(2)
     </script>
 </body>
+
 </html>
