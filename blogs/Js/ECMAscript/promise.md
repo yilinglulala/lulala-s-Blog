@@ -1,10 +1,10 @@
 ---
-title: promise-async/await
-date: 2020-12-09
+title: promise
+date: 2021-04-11
 tags:
- - ES6
+
 categories: 
- - Js
+ - ECMAScript
 ---
 
 # promise
@@ -68,4 +68,21 @@ axios.interceptors.response.use(
 # async / await
 
 await 后跟着promise对象
+
+
+
+## 易错
+
+```js
+很容易做错的笔试题。
+
+var a = 0
+var b = async () => {
+  a = a + await 10
+  console.log('2', a) // -> ？
+}
+b()
+a++
+console.log('1', a) // -> ？j
+```
 

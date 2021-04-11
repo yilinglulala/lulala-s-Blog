@@ -2,7 +2,7 @@
  * @Description: file content
  * @Author: xuyiling
  * @Date: 2020-08-18 23:04:11
- * @LastEditTime: 2021-04-06 22:04:53
+ * @LastEditTime: 2021-04-07 22:48:24
  * @LastEditors: xuyiling
 -->
 <!DOCTYPE html>
@@ -16,27 +16,95 @@
 
 <body>
     <script>
-        Function.prototype.myBind = function (context) {
-            var _this = this
-            var args = [...arguments].slice(1)// 第一个参数是this指向
-            // 返回一个函数
-            return function F() {
-                // 因为返回了一个函数，我们可以 new F()，所以需要判断
-                if (this instanceof F) {
-                    console.log(1);
-                    return new _this(...args, ...arguments)
-                }
-                console.log(2, this);
-                return _this.apply(context, args.concat(...arguments))
-            }
+        function m() {
+            console.log(a1); 
+            console.log(a2); 
+            console.log(b1); 
+            console.log(b2);
+        
+        if (false) {
+            function b1() { } 
+            var a1 = 100
         }
-        let fn = function () {
-            this.a = 666
-            console.log(this.a);
+        if (true) {
+            console.log(b2,1);
+            function b2() { }; 
+            var a2 = 10;
         }
-        let fn1 = fn.myBind({ a: 333 }, 1)
-        console.dir(fn1);
-        new fn1(2)
+        
+        console.log(a1)
+        console.log(a2); 
+        console.log(b1); 
+        console.log(b2); 
+    }
+        m()
+
+
+        // (function d(num) {
+        //     console.log(num); var num = 10;
+        // }(100));
+
+
+        // function b() {
+        //     console.log(a);
+
+        //     function a() { } 
+        //     var a = 10;
+        //     a = 100;
+        //     console.log(a);
+        // }
+        // b();
+
+
+        // var a = 10;
+        // function test() {
+        //     a = 100;
+        //     console.log(a);
+        //     console.log(this.a); var a;
+        //     console.log(a);
+        // }
+        // test();
+
+
+        // function f(s) {
+        //     console.log(this.a, s); return this.a + s;
+        // }
+        // var obj = {
+        //     a: 2
+        // }
+        // var f2 = function () {
+        //     return f.apply(obj, arguments);
+        // }
+        // var b = f2(4); 
+        // console.log(b);
+
+
+        // function f() {
+        //     console.log(this.a);
+        // }
+        // var obj = {
+        //     a: 2, f: f
+        // }
+        // var f2 = obj.f; 
+        // var a = 'hello'; 
+        // f2();
+
+
+        // var length = 100; 
+        // function f1() {
+        //     console.log(this.length);
+        // }
+        // var obj = {
+        //     x: 10,
+        //     f2: function (f1) {
+        //         f1();
+        //         arguments[0]();
+        //         f3 = arguments[0];
+        //         f3()
+        //     }
+        // }
+        // obj.f2(f1,1,2)
+
     </script>
 </body>
 

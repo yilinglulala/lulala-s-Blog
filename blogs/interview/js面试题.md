@@ -7,9 +7,13 @@ categories:
  - JS
 ---
 
+# 面试文章
 
+[https://jsgodroad.com/interview/js/](https://jsgodroad.com/interview/js/)
 
-https://jsgodroad.com/interview/js/
+[https://bitable.feishu.cn/app8Ok6k9qafpMkgyRbfgxeEnet?from=logout&table=tblEnSV2PNAajtWE&view=vewJHSwJVd](https://bitable.feishu.cn/app8Ok6k9qafpMkgyRbfgxeEnet?from=logout&table=tblEnSV2PNAajtWE&view=vewJHSwJVd)
+
+https://juejin.im/post/6864398060702760968#heading-126
 
 ## call / apply / bind
 
@@ -290,7 +294,57 @@ document.body.onclick = function(){
 
 浅拷贝
 
+```js
+// 数组可以用concat
+[].concat(arr)
+// 对象可以用assign
+Object.assign({},obj)
+// 也可以用展开运算符
+[...arr]
+{...obj}
+```
+
 深拷贝
+
+```js
+// 利用 WeakMap 解决循环引用
+let map = new WeakMap()
+function deepClone(obj) {
+  if (obj instanceof Object) {
+    if (map.has(obj)) {
+      return map.get(obj)
+    }
+    let newObj
+    if (obj instanceof Array) {
+      newObj = []     
+    } else if (obj instanceof Function) {
+      newObj = function() {
+        return obj.apply(this, arguments)
+      }
+    } else if (obj instanceof RegExp) {
+      // 拼接正则
+      newobj = new RegExp(obj.source, obj.flags)
+    } else if (obj instanceof Date) {
+      newobj = new Date(obj)
+    } else {
+      newObj = {}
+    }
+    // 克隆一份对象出来
+    let desc = Object.getOwnPropertyDescriptors(obj)
+    let clone = Object.create(Object.getPrototypeOf(obj), desc)
+    map.set(obj, clone)
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        newObj[key] = deepClone(obj[key])
+      }
+    }
+    return newObj
+  }
+  return obj
+}
+```
+
+
 
 ## Event Bus
 
@@ -343,4 +397,18 @@ class Events {
 ## 闭包
 
 > 一个函数可以访问另一个函数内部的变量
+
+## 模块化
+
+
+
+## 事件循环
+
+>1. 执行同步代码
+>2. 执行完所有同步代码后且执行栈为空，判断是否有微任务需要执行
+>3. 执行所有微任务且微任务队列为空
+>4. 是否有必要渲染页面
+>5. 执行一个宏任务
+
+## Promise
 

@@ -92,3 +92,24 @@ git commit -m 'xxx'
 git pull origin master
 ```
 
+
+
+## github图片无法查看
+
+1. 查找相关的URL
+
+2. 访问 https://www.ipaddress.com/
+
+3. 输入相关的URL ，点击查询
+
+   ![image-20210407120036867](https://gitee.com/xuyiling/gopic/raw/master/img/20210407120043.png)
+
+4. 复制IP
+
+![image-20210407120220381](https://gitee.com/xuyiling/gopic/raw/master/img/20210407120220.png)
+
+5. 打开`C:\Windows\System32\drivers\etc` hosts 文件，新增配置保存
+
+![image-20210407120341943](https://gitee.com/xuyiling/gopic/raw/master/img/20210407120341.png)
+
+6. 刷新页面可看
