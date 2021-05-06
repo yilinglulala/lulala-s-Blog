@@ -4,7 +4,7 @@ date: 2020-10-20
 tags:
  - API
 categories: 
- - Js
+ - JS
 ---
 
 ## matchMedia

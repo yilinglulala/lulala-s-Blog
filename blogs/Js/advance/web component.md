@@ -4,7 +4,7 @@ date: 2020-07-26
 tags:
  - web component
 categories: 
- - Js
+ - JS
 ---
 
 [阮一峰 - web component](http://www.ruanyifeng.com/blog/2019/08/web_components.html)

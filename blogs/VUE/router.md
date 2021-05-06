@@ -5,7 +5,7 @@ tags:
  - vue
  - router
 categories: 
- - Vue
+ - VUE
 ---
 
 ## 路由器

@@ -5,7 +5,7 @@ tags:
  - three.js
  - vue
 categories: 
- - Vue
+ - VUE
 ---
 
 ## Three

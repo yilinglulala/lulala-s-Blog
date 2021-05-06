@@ -16,3 +16,34 @@ let router = new Router()
 router.get("xxx",(ctx)=>{xxx})
 ```
 
+
+
+## 简单的服务
+
+```js
+const koa = require("koa");
+const Router = require("koa-router");
+let newsData = require("./data.json");
+console.log(newsData);
+let app = new koa();
+let router = new Router();
+router.get("/", ctx => {
+    ctx.body = "some value..";
+})
+router.get("/getList", ctx => {
+    let p = ctx.query.p || 1;
+    let perPage = 2;
+    let formatData = newsData.data.slice((p-1)*perPage,p*perPage)
+
+    console.log(formatData);
+    ctx.body = formatData;
+})
+router.get("/getOvertimeHours", ctx => {
+    ctx.body = {data:3};
+})
+app.use(router.routes()); 
+app.listen(8888);
+console.log("8888");
+
+```
+

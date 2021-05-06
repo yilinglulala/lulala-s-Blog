@@ -6,8 +6,8 @@ tags:
  - js
  - 传参
 categories: 
- - Css
- - Js
+ - CSS
+ - JS
 ---
 
 [原文](https://www.zhangxinxu.com/wordpress/2020/02/css-params-to-js/?shrink=1)

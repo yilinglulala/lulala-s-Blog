@@ -5,7 +5,7 @@ tags:
  - ArrayBuffer
  - audio
 categories: 
- - Js
+ - JS
 ---
 
 ## 从input获取文件

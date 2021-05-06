@@ -4,7 +4,7 @@ date: 2020-08-22
 tags:
 
 categories: 
- - Js
+ - JS
 ---
 
 ## 原则

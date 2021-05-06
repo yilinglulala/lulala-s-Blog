@@ -4,7 +4,7 @@ date: 2020-10-20
 tags:
  - 测试
 categories: 
- - Js
+ - JS
 ---
 
 ## 安装

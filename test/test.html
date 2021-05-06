@@ -2,7 +2,7 @@
  * @Description: file content
  * @Author: xuyiling
  * @Date: 2020-08-18 23:04:11
- * @LastEditTime: 2021-04-07 22:48:24
+ * @LastEditTime: 2021-04-14 23:15:59
  * @LastEditors: xuyiling
 -->
 <!DOCTYPE html>
@@ -16,27 +16,63 @@
 
 <body>
     <script>
+        var {
+            connectStart,
+            connectEnd,
+            domainLookupStart,
+            domainLookupEnd,
+            fetchStart,
+            responseStart,
+            responseEnd,
+
+            navigationStart,
+            loadEventEnd,
+            domLoading,
+            secureConnectionStart,
+            domContentLoadedEventStart,
+            domInteractive,
+            redirectStart,
+            requestStart,
+            unloadEventEnd,
+            unloadEventStart,
+            domComplete,
+            loadEventStart,
+            domContentLoadedventEnd,
+            redirectEnd,
+
+        } = performance.timing
+        let myPerformance = {
+            DNS: domainLookupEnd - domainLookupStart,
+            TCP: connectEnd - connectStart,
+            contentLoad: responseEnd - responseStart,
+            firstbyte: responseStart - domainLookupStart,// 首包时间
+            fpt: responseEnd - fetchStart,// 首次渲染时间
+            tti: domInteractive - fetchStart,// 首次可交互时间
+            ready:domContentLoadedEventStart-fetchStart,// 
+            load:loadEventStart-fetchStart
+        }
+
         function m() {
-            console.log(a1); 
-            console.log(a2); 
-            console.log(b1); 
+            console.log(a1);
+            console.log(a2);
+            console.log(b1);
             console.log(b2);
-        
-        if (false) {
-            function b1() { } 
-            var a1 = 100
+
+            if (false) {
+                function b1() { }
+                var a1 = 100
+            }
+            if (true) {
+                console.log(b2, 1);
+                function b2() { };
+                var a2 = 10;
+            }
+
+            console.log(a1)
+            console.log(a2);
+            console.log(b1);
+            console.log(b2);
         }
-        if (true) {
-            console.log(b2,1);
-            function b2() { }; 
-            var a2 = 10;
-        }
-        
-        console.log(a1)
-        console.log(a2); 
-        console.log(b1); 
-        console.log(b2); 
-    }
         m()
 
 

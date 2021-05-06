@@ -1,3 +1,15 @@
+---
+title: three.js
+date: 2020-07-26
+tags:
+ - 3D
+ - 图像
+categories: 
+ - JS
+---
+
+
+
 # 在vue中使用three.js
 
 [教程](http://www.webgl3d.cn/Three.js/)

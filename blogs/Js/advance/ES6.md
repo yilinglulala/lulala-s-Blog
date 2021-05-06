@@ -4,7 +4,7 @@ date: 2020-12-09
 tags:
  - ES6
 categories: 
- - Js
+ - JS
 ---
 
 

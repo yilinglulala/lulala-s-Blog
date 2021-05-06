@@ -76,15 +76,15 @@ Function.prototype.myApply = function(context) {
 
 ```js
 Function.prototype.myBind = function (context) {
-  var _this = this
+  var fn = this
   var args = [...arguments].slice(1)// 第一个参数是this指向
   // 返回一个函数
   return function F() {
     // 因为返回了一个函数，我们可以 new F()，所以需要判断
     if (this instanceof F) {
-      return new _this(...args, ...arguments)
+      return new fn(...args, ...arguments)
     }
-    return _this.apply(context, args.concat(...arguments))
+    return fn.apply(context, args.concat(...arguments))
   }
 }
 // 使用
@@ -411,4 +411,94 @@ class Events {
 >5. 执行一个宏任务
 
 ## Promise
+
+手写promise
+
+all
+
+race
+
+catch
+
+resolve
+
+reject
+
+```js
+const PENDING = 'pending'
+const FULFILLED = 'fulfilled'
+const REJECTED = 'rejected'
+
+function Promise(executor) {
+    var _this = this
+    this.state = PENDING; //状态
+    this.value = undefined; //成功结果
+    this.reason = undefined; //失败原因
+    
+    this.onFulfilled = [];//成功的回调
+    this.onRejected = []; //失败的回调
+    
+    function resolve(value) {
+        if(_this.state === PENDING){
+            _this.state = FULFILLED
+            _this.value = value
+            _this.onFulfilled.forEach(fn => fn(value))
+        }
+    }
+    function reject(reason) {
+        if(_this.state === PENDING){
+            _this.state=REJECTED
+            _this.reason = reason
+            _this.onRejected.forEach(fn=>{
+                fn(reason)
+            })
+        }
+    }
+    
+    try {
+        executor(resolve, reject);
+    } catch (e) {
+        reject(e);
+    }
+}
+
+Promise.prototype.then = function (onFulfilled, onRejected) {
+    
+    //_this是promise1的实例对象
+    var _this = this
+    onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : value => value
+    onRejected = typeof onRejected === 'function' ? onRejected : reason => { throw reason }
+
+    var promise2 = new Promise((resolve, reject)=>{
+        if(_this.state === FULFILLED){
+            let x = onFulfilled(_this.value)
+            resolvePromise(promise2, x, resolve, reject)
+        } else if(_this.state === REJECTED){
+            let x = onRejected(_this.reason)
+            resolvePromise(promise2, x ,resolve, reject)
+        } else if(_this.state === PENDING){
+            _this.onFulfilled.push(()=>{
+                let x = onFulfilled(_this.value)
+                resolvePromise(promise2, x, resolve, reject)
+            })
+            _this.onRejected.push(()=>{
+                let x = onRejected(_this.reason)
+                resolvePromise(promise2, x ,resolve, reject)
+            })
+        }
+    })
+    
+    return promise2
+};
+```
+
+
+
+## 无缝轮播图思路
+
+
+
+![image-20210427163612416](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ddff76b400834f6d9669db19218d0c3d~tplv-k3u1fbpfcp-zoom-1.image)![image-20210429210441521](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3aa25e3537dd4d3aa3b06032283803a9~tplv-k3u1fbpfcp-zoom-1.image)
+
+![image-20210430232915691](https://gitee.com/xuyiling/gopic/raw/master/img/20210430232915.png)
 

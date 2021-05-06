@@ -5,7 +5,7 @@ tags:
  - vue
  - 基础
 categories: 
- - Vue
+ - VUE
 ---
 
 

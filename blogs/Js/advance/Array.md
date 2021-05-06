@@ -4,19 +4,59 @@ date: 2020-12-09
 tags:
  - 数组
 categories: 
- - Js
+ - JS
 ---
 
 ## 遍历
 
-```
-for ... in
+```js
+for ... in // for...in 会把原型上的属性也遍历出来
 for ... of
+forEach
+map
+```
+
+## 去重
+
+```js
+[...new Set(arr)]
+```
+
+```js
+Array.from(new Set(arr))
+```
+
+```js
+arr.filter((v,i)=>arr.indexOf(v)===i)
+```
+
+```js
+// 方式4
+const result = [];
+const map = new Map();
+for (let v of originalArray) {
+    if (!map.has(v)) {
+        map.set(v, true);
+        result.push(v);
+    }
+}
+console.log(result); // -> [1, 2, 3, 4, 5]
+
+// 方式5
+const result = [];
+for (let v of originalArray) {
+    if (!result.includes(v)) {
+        result.push(v);
+    }
+}
+console.log(res)js
 ```
 
 
 
 ## 扁平化
+
+### 生成器函数
 
 ```js
 var arr = [1, [[2, 3], 4], [5, 6]];
@@ -39,41 +79,30 @@ for (var f of flat(arr)) {
 // 1, 2, 3, 4, 5, 6
 ```
 
-## 浅拷贝
+### flat
 
-let arr
+arr.flat(deep)
 
-![image-20200908210922338](C:\Users\xuyiling\AppData\Roaming\Typora\typora-user-images\image-20200908210922338.png)
+> deep 扁平化深度
 
-## 深拷贝
+- deep 可以是 `Infinity`
 
-### JSON.parse(JSON.stringify(xxx))
-
-缺点：
-
-1. function ，undefined等无法拷贝
-
-### 递归
+### toString
 
 ```js
-function deepcopy(obj) {
-    let newobj = Array.isArray(obj) ? [] : {}; 
-    // 方式2：let newobj = obj.constructor()
-    for (let i in obj) {
-        if(obj.hasOwnProperty(i)){
-            if (typeof obj[i] === "object" && obj!==null) {
-                newObj[i] = deepCopy(obj[i]);
-            } else {
-                newobj[i] = obj[i]
-            }
-        }
-    }
-    return newObj;
-}
+var arr = [1,[2,[3,4]]]
+console.log(arr.toString().split(','))
+// [1, 2, 3, 4]
 ```
 
-注意：
+### concat
 
-> for...in 会把原型上的属性也遍历出来
->
-> obj.hasOwnProperty(key) 可以用这个方法判断是否是自身属性
+```js
+var arr = [1,[2,[3,4]]]
+while(arr.some(v=>Array.isArray(v))){
+	arr = [].concat(...arr)
+}
+console.log(arr);
+// [1, 2, 3, 4]
+```
+
