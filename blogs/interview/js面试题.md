@@ -54,6 +54,8 @@ Function.prototype.myCall = function(context, ...args) {
 }
 ```
 
+
+
 ### 🔥手写apply
 
 ```js

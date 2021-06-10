@@ -14,9 +14,14 @@ for ... in // for...in 会把原型上的属性也遍历出来
 for ... of
 forEach
 map
+reduce
+filter
+
 ```
 
 ## 去重
+
+1. 利用Set 的特性
 
 ```js
 [...new Set(arr)]
@@ -26,9 +31,13 @@ map
 Array.from(new Set(arr))
 ```
 
+2. 利用过滤当前索引和首次出现索引位置一样的才保留
+
 ```js
 arr.filter((v,i)=>arr.indexOf(v)===i)
 ```
+
+3. 
 
 ```js
 // 方式4
@@ -41,7 +50,11 @@ for (let v of originalArray) {
     }
 }
 console.log(result); // -> [1, 2, 3, 4, 5]
+```
 
+4. 遍历原数组，新数组没有的值才往里push,最后返回新数组
+
+```js
 // 方式5
 const result = [];
 for (let v of originalArray) {
@@ -49,7 +62,7 @@ for (let v of originalArray) {
         result.push(v);
     }
 }
-console.log(res)js
+console.log(res)
 ```
 
 
@@ -77,6 +90,20 @@ for (var f of flat(arr)) {
   console.log(f);
 }
 // 1, 2, 3, 4, 5, 6
+```
+
+### 普通递归
+
+```js
+function flatter(arr) {
+  if (!arr.length) return;
+  return arr.reduce(
+    (pre, cur) =>
+      Array.isArray(cur) ? [...pre, ...flatter(cur)] : [...pre, cur],
+    []
+  );
+}
+// console.log(flatter([1, 2, [1, [2, 3, [4, 5, [6]]]]]));
 ```
 
 ### flat
