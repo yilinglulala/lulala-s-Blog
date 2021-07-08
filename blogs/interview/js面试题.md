@@ -15,6 +15,22 @@ categories:
 
 https://juejin.im/post/6864398060702760968#heading-126
 
+## 🔥手写map
+
+```js
+function mymap(arr,cb){
+    let res = []
+    if(Array.isArray(arr)&&arr.length&&typeof cb === 'function'){
+        for(let i=0,i<arr.length;i++){
+            res[i] = cb(arr[i],i,arr)
+        }
+    }
+    return res
+}
+```
+
+
+
 ## call / apply / bind
 
 ```js
@@ -116,6 +132,10 @@ function instanceof(left, right) {
 
 ### **防抖**
 
+触发事件，一定时间内没有重新触发会执行，如果重新触发则清掉定时器，重新定时
+
+实际场景：搜索框停止输入n秒后才执行搜索
+
 1. 简易版
 
 ```js
@@ -149,7 +169,7 @@ function now() {
  *
  * @param  {function} func        回调函数
  * @param  {number}   wait        表示时间窗口的间隔
- * @param  {boolean}  immediate   设置为ture时，是否立即调用函数
+ * @param  {boolean}  immediate   设置为ture时，是否立即调用函数，立即调用在时间片头执行，非立即执行在时间片尾执行
  * @return {function}             返回客户调用函数
  */
 function debounce (func, wait = 50, immediate = true) {
@@ -191,6 +211,31 @@ function debounce (func, wait = 50, immediate = true) {
 ```
 
 ### 节流
+
+在一定的时间内，连续点击n次，只有一次会生效
+
+**实际场景：**
+
+- 技能冷却
+- 按钮连续点击
+
+1. 简易版
+
+```js
+function thro(fn,wait){
+    let timer
+    return function(...args){
+        if(!timer){
+            timer = setTimeout(()=>{
+                fn.apply(this,args)
+                timer = null
+            },wait)
+        }
+    }
+}
+```
+
+
 
 ```js
 /**
@@ -292,61 +337,11 @@ document.body.onclick = function(){
 
 ### new
 
-## 拷贝
-
-浅拷贝
-
-```js
-// 数组可以用concat
-[].concat(arr)
-// 对象可以用assign
-Object.assign({},obj)
-// 也可以用展开运算符
-[...arr]
-{...obj}
-```
-
-深拷贝
-
-```js
-// 利用 WeakMap 解决循环引用
-let map = new WeakMap()
-function deepClone(obj) {
-  if (obj instanceof Object) {
-    if (map.has(obj)) {
-      return map.get(obj)
-    }
-    let newObj
-    if (obj instanceof Array) {
-      newObj = []     
-    } else if (obj instanceof Function) {
-      newObj = function() {
-        return obj.apply(this, arguments)
-      }
-    } else if (obj instanceof RegExp) {
-      // 拼接正则
-      newobj = new RegExp(obj.source, obj.flags)
-    } else if (obj instanceof Date) {
-      newobj = new Date(obj)
-    } else {
-      newObj = {}
-    }
-    // 克隆一份对象出来
-    let desc = Object.getOwnPropertyDescriptors(obj)
-    let clone = Object.create(Object.getPrototypeOf(obj), desc)
-    map.set(obj, clone)
-    for (let key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        newObj[key] = deepClone(obj[key])
-      }
-    }
-    return newObj
-  }
-  return obj
-}
-```
 
 
+## 深拷贝-浅拷贝
+
+请参照文章 【深拷贝-浅拷贝】
 
 ## Event Bus
 

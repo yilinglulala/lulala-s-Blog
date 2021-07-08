@@ -37,10 +37,8 @@ Array.from(new Set(arr))
 arr.filter((v,i)=>arr.indexOf(v)===i)
 ```
 
-3. 
-
 ```js
-// 方式4
+// 方式
 const result = [];
 const map = new Map();
 for (let v of originalArray) {
@@ -55,7 +53,7 @@ console.log(result); // -> [1, 2, 3, 4, 5]
 4. 遍历原数组，新数组没有的值才往里push,最后返回新数组
 
 ```js
-// 方式5
+// 方式
 const result = [];
 for (let v of originalArray) {
     if (!result.includes(v)) {
@@ -95,6 +93,21 @@ for (var f of flat(arr)) {
 ### 普通递归
 
 ```js
+const array = []
+const fn = (arr)=>{
+	for(let i = 0;i<arr.length;i++){
+		if(Array.isArray(arr[i])){
+			fn(arr[i])
+		}else{
+			array.push(arr[i])
+		}
+	}
+}
+```
+
+### reduce
+
+```js
 function flatter(arr) {
   if (!arr.length) return;
   return arr.reduce(
@@ -119,7 +132,7 @@ arr.flat(deep)
 ```js
 var arr = [1,[2,[3,4]]]
 console.log(arr.toString().split(','))
-// [1, 2, 3, 4]
+// ["1", "2", "3", "4"],有点不对劲，变成字符串了
 ```
 
 ### concat
@@ -132,4 +145,15 @@ while(arr.some(v=>Array.isArray(v))){
 console.log(arr);
 // [1, 2, 3, 4]
 ```
+
+### 正则
+
+```js
+let str = JSON.stringify(arr).replace(/\[|\]/g,'')
+let res = JSON.parse("["+str+"]")
+```
+
+## 常用函数
+
+### reduce
 
