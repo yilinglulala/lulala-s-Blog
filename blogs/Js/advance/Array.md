@@ -21,13 +21,11 @@ filter
 
 ## 去重
 
-1. 利用Set 的特性
+1. 利用Set 无重复项的特性
 
 ```js
 [...new Set(arr)]
-```
-
-```js
+// 也可以用Araay.from来转为数组
 Array.from(new Set(arr))
 ```
 
@@ -37,8 +35,10 @@ Array.from(new Set(arr))
 arr.filter((v,i)=>arr.indexOf(v)===i)
 ```
 
+3. 使用Map来标记是否已经含有此数据
+
 ```js
-// 方式
+// 但是这种方法似乎更复杂了，需要多一个Map来做标记，不如直接用includes来的方便
 const result = [];
 const map = new Map();
 for (let v of originalArray) {
@@ -53,7 +53,6 @@ console.log(result); // -> [1, 2, 3, 4, 5]
 4. 遍历原数组，新数组没有的值才往里push,最后返回新数组
 
 ```js
-// 方式
 const result = [];
 for (let v of originalArray) {
     if (!result.includes(v)) {
@@ -61,6 +60,13 @@ for (let v of originalArray) {
     }
 }
 console.log(res)
+
+// 这种思路也可以使用reduce 实现
+const res = originalArray.reduce((pre,cur)=>{
+    if(!pre.includes(cur)){
+        pre.push(cur)
+    }
+},[])
 ```
 
 
@@ -111,8 +117,10 @@ const fn = (arr)=>{
 function flatter(arr) {
   if (!arr.length) return;
   return arr.reduce(
-    (pre, cur) =>
-      Array.isArray(cur) ? [...pre, ...flatter(cur)] : [...pre, cur],
+    (pre, cur) =>{
+        Array.isArray(cur) ? [...pre, ...flatter(cur)] : [...pre, cur]
+        // 或者这样写pre.concat(Array.isArray(cur) ?flatter(cur):cur)
+    },
     []
   );
 }

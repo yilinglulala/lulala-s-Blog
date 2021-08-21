@@ -15,7 +15,40 @@ categories:
 
 https://juejin.im/post/6864398060702760968#heading-126
 
-## 🔥手写map
+
+
+## 数据类型有哪些
+
+https://jsgodroad.com/interview/js/#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B
+
+**`BigInt`** 是一种内置对象，它提供了一种方法来表示大于 `2^53^ - 1`的整数。这原本是 Javascript中可以用 [`Number`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number) 表示的最大数字。**`BigInt`** 可以表示任意大的整数。
+
+NaN
+
+
+
+## 数据类型判断
+
+typeof
+
+instanceof
+
+Object.prototype.toString.call(xxx)
+
+Array.isArray
+
+isNaN
+
+## 类型转换
+
+```js
+[]==![]
+//过程：[]==![]  ---->   []==false   ----->   0==0   --->//true
+```
+
+
+
+## 🔥手写Array.map
 
 ```js
 function mymap(arr,cb){
@@ -111,6 +144,8 @@ fn.myBind(obj,[1,2,3])
 
 ## 👀instanceof
 
+原理:
+
 ```js
 function instanceof(left, right) {
     // 获得类型的原型
@@ -126,6 +161,7 @@ function instanceof(left, right) {
     	left = left.__proto__
     }
 }
+// instanceof({},Object)
 ```
 
 ## 🔥防抖/节流
@@ -157,13 +193,9 @@ const debounce = (func, wait = 50) => {
 // 不难看出如果用户调用该函数的间隔小于 wait 的情况下，上一次的时间还未到就被清除了，并不会执行函数
 ```
 
-2. 带有立即执行选项的**防抖函数**
+2. 带有立即执行选项的**`防抖函数`**
 
 ```js
-// 这个是用来获取当前时间戳的
-function now() {
-  return +new Date()
-}
 /**
  * 防抖函数，返回函数连续调用时，空闲时间必须大于或等于 wait，func 才会执行
  *
@@ -499,3 +531,82 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
 
 ![image-20210430232915691](https://gitee.com/xuyiling/gopic/raw/master/img/20210430232915.png)
 
+## vue
+
+- v-for和v-if 的优先级
+
+- 单向数据流v-bind
+
+  双向数据流v-model
+
+- vuex是如何传数据的
+
+  - 同步mutations
+  - 异步actions
+
+- mvc和mvvm的区别
+
+- 生命周期
+
+- 组件通信
+
+## 性能优化
+
+### vue
+
+- 冻结对象
+- 懒加载
+- 重绘回流
+
+## 网络安全
+
+xss跨域脚本攻击:fire:
+
+
+
+## 算法
+
+1. 一个只包含()[]{}的字符串，判断是否合法，如``{()}``,``(){}``合法，``){}``不合法
+
+```js
+let left=["(","[","{"],
+    right=[")","]","}"]
+function check(str){
+    if(str.length%2!==0||legt.indexOf(str[0])===-1){return false}
+    let stack = [str[0]]
+    str.slice(1).split("").forEach(v => {
+        let pre = stack[stack.length-1]
+        if(pre!==undefined &&left.indexOf(pre)===right.indexOf(v)){
+            stack.pop()
+        }else{
+            stack.push(v)
+        }
+    });
+    return stack.length===0
+}
+// let res = check("[]{}")
+```
+
+
+
+## 垃圾回收
+
+- 是什么
+
+垃圾回收是指当我们创建的对象不再被需要的时候，释放内存空间，以便内存空间被再次利用
+
+- 为什么（必要性）
+
+如果我们不进行垃圾回收，js解释器会消耗掉系统中所有可用的内存，造成系统崩溃
+
+- 怎么做
+
+  - 标记清除
+
+    
+
+  - 引用计数
+
+
+
+## http / https的区别
