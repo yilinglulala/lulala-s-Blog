@@ -48,122 +48,6 @@ isNaN
 
 
 
-## 🔥手写Array.map
-
-```js
-function mymap(arr,cb){
-    let res = []
-    if(Array.isArray(arr)&&arr.length&&typeof cb === 'function'){
-        for(let i=0,i<arr.length;i++){
-            res[i] = cb(arr[i],i,arr)
-        }
-    }
-    return res
-}
-```
-
-
-
-## call / apply / bind
-
-```js
-fn.call(obj,1,2,3) 
-fn.apply(obj,[1,2,3])// 参数为数组
-fn.bind(obj,[1,2,3]) // 并不立即执行
-```
-
-🍍**同**
-
-- 都是function原型上的方法
-
-- 都是调用函数
-
-- 都可以改变this指向
-
-🍍**不同**
-
-- apply 接收的参数是数组
-
-**📌注意**
-
-> call 的性能会比apply好一丢丢(尤其是传参大于3个的时候)
->
-> bind并不立即执行
-
-### 🔥手写call
-
-```js
-Function.prototype.myCall = function(context, ...args) {
-  context = context || window
-  let fn = Symbol()
-  context[fn] = this
-  let result = context[fn](...args)
-  delete context[fn]
-  return result
-}
-```
-
-
-
-### 🔥手写apply
-
-```js
-Function.prototype.myApply = function(context) {
-  context = context || window
-  let fn = Symbol()
-  context[fn] = this
-  let result
-  if (arguments[1]) {
-    result = context[fn](...arguments[1])
-  } else {
-    result = context[fn]()
-  }
-  delete context[fn]
-  return result
-}
-```
-
-### 🔥手写bind
-
-```js
-Function.prototype.myBind = function (context) {
-  var fn = this
-  var args = [...arguments].slice(1)// 第一个参数是this指向
-  // 返回一个函数
-  return function F() {
-    // 因为返回了一个函数，我们可以 new F()，所以需要判断
-    if (this instanceof F) {
-      return new fn(...args, ...arguments)
-    }
-    return fn.apply(context, args.concat(...arguments))
-  }
-}
-// 使用
-fn.myBind(obj,[1,2,3])
-```
-
-## 👀instanceof
-
-原理:
-
-```js
-function instanceof(left, right) {
-    // 获得类型的原型
-    let prototype = right.prototype
-    // 获得对象的原型
-    left = left.__proto__
-    // 判断对象的类型是否等于类型的原型
-    while (true) {
-    	if (left === null)
-    		return false
-    	if (prototype === left)
-    		return true
-    	left = left.__proto__
-    }
-}
-// instanceof({},Object)
-```
-
 ## 🔥防抖/节流
 
 ### **防抖**
@@ -531,24 +415,7 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
 
 ![image-20210430232915691](https://gitee.com/xuyiling/gopic/raw/master/img/20210430232915.png)
 
-## vue
-
-- v-for和v-if 的优先级
-
-- 单向数据流v-bind
-
-  双向数据流v-model
-
-- vuex是如何传数据的
-
-  - 同步mutations
-  - 异步actions
-
-- mvc和mvvm的区别
-
-- 生命周期
-
-- 组件通信
+- 
 
 ## 性能优化
 

@@ -9,13 +9,15 @@ categories:
 
 
 
-![image-20210216150743588](https://gitee.com/xuyiling/gopic/raw/master/img/20210216150750.png)CSS
+![image-20210216150743588](https://gitee.com/xuyiling/gopic/raw/master/img/20210216150750.png)
 
-- flex布局
+## flex布局
 
 align-self
 
-- BFC
+## BFC
+
+margin 纵向重叠
 
 ## 选择器权重
 
@@ -40,4 +42,42 @@ content+padding+border+margin
 
 content(内容+padding+border) + margin
 
+- 改变盒子模型的方法
+
 > box-sizing:border-box
+
+## 浮动
+
+1. 破坏性
+
+脱离文档流，会使得父节点高度坍塌
+
+2. 包裹性
+3. 值不为none的情况下会出发BFC
+
+### 清除浮动
+
+1. 在浮动元素的父元素加上clearfix类
+
+```css
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+```
+
+2. 在浮动元素后加空余节点
+
+```html
+<div class="float"></div>
+<div class="clear"></div>
+```
+
+```css
+.clear{
+	clear:both
+}
+```
+
+## 回流/重绘
