@@ -7,3 +7,11 @@ categories:
  - HTML
 ---
 
+# 语义化
+
+
+
+defer,async
+
+
+

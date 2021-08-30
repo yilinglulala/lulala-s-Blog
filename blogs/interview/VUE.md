@@ -191,3 +191,5 @@ $emit
 :flags:vue异步组件技术 
 
 ()=>import("xxx")
+
+# Vue和react 的区别

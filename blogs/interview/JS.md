@@ -251,7 +251,7 @@ document.body.onclick = function(){
 }
 ```
 
-### new
+
 
 
 
@@ -311,9 +311,15 @@ class Events {
 
 > 一个函数可以访问另一个函数内部的变量
 
+应用：防抖，节流
+
 ## 模块化
 
+node.js common.js
 
+AMD
+
+ESM
 
 ## 事件循环
 
@@ -423,11 +429,10 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
 
 - 冻结对象
 - 懒加载
-- 重绘回流
 
-## 网络安全
+  
 
-xss跨域脚本攻击:fire:
+
 
 
 
@@ -474,6 +479,40 @@ function check(str){
 
   - 引用计数
 
+## typescript 和 javascript 的区别
 
+- （分别是什么）
 
-## http / https的区别
+​	JavaScript 是一种轻量级的解释性脚本语言。
+
+​	TypeScript是JavaScript类型的超集，它可以编译成纯JavaScript。TypeScript可以在任何浏览器、任何计算机和任何操作系统上运行，并且是开源的。
+
+- 相同点
+- 不同点
+  - ts 是js 对象模型的一种扩展
+  - ts 有明确的类型要求，javascript 是弱类型语言
+  - ts 需要编译成 js
+
+- 各自的优势
+
+js:
+
+1. 发展较早，较成熟
+
+2. 不需要编译
+
+3. 更灵活
+
+ts:
+
+1. 类型检查，可以在编程时避免一些因类型问题导致的问题
+
+2. 便于维护
+
+- 使用场景
+
+大型项目适合ts
+
+​	
+
+## 
