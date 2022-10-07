@@ -3,7 +3,7 @@
  # @Author: xyl
  # @Date: 2020-07-28 15:53:54
  # @LastEditors: xuyiling
- # @LastEditTime: 2021-03-27 11:32:06
+ # @LastEditTime: 2021-12-25 11:50:37
 ### 
 #!/usr/bin/env sh
 
@@ -28,7 +28,7 @@ git push
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+git push -f git@gitee.com:xuyiling/lulala-blog.git master
 # git push -f git@github.com:yilinglulala/lulala-s-Blog.git master:gh-pages
 
 cd -
