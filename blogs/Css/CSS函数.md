@@ -2,7 +2,7 @@
 
 ![image-20221013200207220](D:\Users\yl4374\AppData\Roaming\Typora\typora-user-images\image-20221013200207220.png)
 
-## clamp
+### clamp
 
 接收三个参数：最小值、首选值、最大值。
 
