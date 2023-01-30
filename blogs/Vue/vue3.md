@@ -6,6 +6,10 @@ vue add vue-next //重点 执行这行,会把2.0代码改为3.0的, vue-router, 
 npm run serve
 ```
 
+[vue3源码学习](https://vue3js.cn/start/)
+
+[vue3文档](https://cn.vuejs.org/guide/introduction.html)
+
 ## Vue2与Vue3的对比
 
 - 对TypeScript支持不友好(所有属性都放在了this对象上，难以推倒组件的数据类型)
@@ -17,6 +21,14 @@ npm run serve
 **watch 基于 effect**
 
 
+
+```sh
+npm init vue@latest
+
+> cd <your-project-name>
+> npm install
+> npm run dev
+```
 
 
 
