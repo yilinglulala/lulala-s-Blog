@@ -9,6 +9,9 @@ npm run serve
 [](https://cn.vuejs.org/guide/quick-start.html)
 
 
+[vue3源码学习](https://vue3js.cn/start/)
+
+[vue3文档](https://cn.vuejs.org/guide/introduction.html)
 
 ## Vue2与Vue3的对比
 
@@ -21,6 +24,14 @@ npm run serve
 **watch 基于 effect**
 
 
+
+```sh
+npm init vue@latest
+
+> cd <your-project-name>
+> npm install
+> npm run dev
+```
 
 
 

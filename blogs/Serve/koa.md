@@ -1,3 +1,16 @@
+[阮一峰koa教程](https://www.ruanyifeng.com/blog/2017/08/koa.html)
+
+## response
+
+| key    | 可选值 |      |
+| ------ | ------ | ---- |
+| path   | /      |      |
+| type   | html   |      |
+| body   |        |      |
+| status | 404    |      |
+
+
+
 ## 常用模块
 
 
