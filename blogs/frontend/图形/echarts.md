@@ -8,7 +8,19 @@ categories:
  - Plugin
 ---
 
-## 提示文本保留两位小数
+## tooltip
+
+### 提示文本超出范围截断
+
+```js
+tooltip: {
+	confine: true, // 是否将 tooltip 框限制在图表的区域内。
+}
+```
+
+
+
+### 提示文本保留两位小数
 
 ```js
 tooltip: {
