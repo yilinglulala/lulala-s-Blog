@@ -1,3 +1,5 @@
+## 容器
+
 - 查看容器
 
   ```sh
@@ -45,4 +47,20 @@
   exit
   ```
 
-  
+
+## 镜像
+
+### 查看镜像列表
+
+```sh
+docker image ls
+```
+
+dns 配置
+
+```
+cat /etc/resolv.conf
+```
+
+nameserver 10.100.1.10
+nameserver 192.168.1.22

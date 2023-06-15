@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "version": "0.0.0",
+   // 独立版本： "version": "independent"
   "useClient": "yarn",
    //开放使用工作空间
   "useWorkespaces" : true,
@@ -44,6 +45,12 @@
 ```sh
 lerna create 【moduleName】-y
 # -y 表示使用默认配置
+```
+
+- 创建模块之后，却无法引用, 提示cannot find module, 需要执行一下 `npm i`
+
+```
+npm i
 ```
 
 

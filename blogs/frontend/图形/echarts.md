@@ -8,6 +8,57 @@ categories:
  - Plugin
 ---
 
+## datazoom
+
+### 十字选择范围进行缩放
+
+- 设置toolbox 中的datazoom 透明度为0
+
+```
+{
+	toolbox: {
+        feature: {
+          show: true, //显示区域缩放、缩放还原图标,默认值为true
+          dataZoom: {
+            show: true,
+            yAxisIndex: false,
+            iconStyle: {
+              opacity: 0
+            }
+          }
+        },
+     },
+}
+```
+
+- 挂在之后 dispatchAction 触发选中区域缩放
+
+```js
+mounted() {
+    this.$nextTick(() => {
+      const chartRef = (this.$refs.chart as any).$refs.chartLine;
+
+      chartRef.dispatchAction({
+        // 默认选中区域缩放
+        type: "takeGlobalCursor",
+        key: "dataZoomSelect",
+        dataZoomSelectActive: true,
+      });
+      chartRef.chart.on("datazoom", data => {
+        this.$emit("datazoom", data.batch[0]); // 触发事件
+      });
+    });
+  }
+```
+
+- beforeDestroy 记得解绑事件
+
+```js
+chartRef.chart.off('datazoom')
+```
+
+
+
 ## tooltip
 
 ### 提示文本超出范围截断
