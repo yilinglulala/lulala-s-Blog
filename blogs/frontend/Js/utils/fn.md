@@ -7,6 +7,105 @@ categories:
  - JS
 ---
 
+## Cookies
+
+```js
+export default class Cookies {
+    /***
+     * 添加/修改指定Cookie
+     * @param key cookie键
+     * @param value cookie值
+     * @param expiresDays 过期时间（单位：天）
+     */
+    static setCookie(key:string, value:any, expiresDays = 10):void {
+        //设置之前先删除
+        Cookies.deleteCookie(key);
+        const date = new Date();
+        date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000);
+        document.cookie = key + "=" + value + "; expires=" + date.toUTCString() + ";path=/";
+        document.cookie;
+    }
+
+    /***
+     *  获取指定Cookie
+     * @param key cookie键
+     * @return cookie值
+     */
+    static getCookie(key:string):string {
+        let strCookie = document.cookie;
+        let arrCookie = strCookie.split("; ");
+        for (let i = 0; i < arrCookie.length; i++) {
+            const arr = arrCookie[i].split("=");
+            if (arr[0] === key) {
+                return arr[1];
+            }
+        }
+        return "";
+    }
+
+    /***
+     * 删除指定Cookie
+     * @param key cookie键
+     */
+    static deleteCookie(key:string):void {
+        let date = new Date();
+        date.setTime(date.getTime() - 10000);
+        document.cookie = key + "=v; expires=" + date.toUTCString() + ";path=/";
+    }
+}
+```
+
+## Constant
+
+```js
+class Constant {
+    /***
+     * 项目中的对象源
+     {
+     	【value】: 【text】
+     }
+     */
+    public source = {};
+
+    constructor(source) {
+        this.source = source || {};
+    }
+
+    /***
+     *  获取路径下的值
+     * @param path 路径名称
+     * @param key 路径key
+     * @param defaultValue 默认值 -
+     * ```
+     * import constant from '@/utils/constant';
+     * console.log(constant.getFilterText('account.status', 'IDLE'));
+     * ```
+     */
+    getFilterText(path, key, defaultValue?:any) {
+        return path && get(this.source, [...path.split('.'), key], defaultValue) || '-';
+    }
+
+    /***
+     * 通过路径生成对应的对象格式
+     * @param path 路径名称
+     * ```
+     * console.log(constant.getFilter('account.status'));
+     * ```
+     */
+    getFilter(path, textKey="text") {
+        const data = get(this.source, path, {});
+        return Object.entries(data).map(([value, text]) => {
+            // 支持数字、boolean类型
+            if(/^[0-9]*$/.test(value) || value === 'true' || value === 'false'){
+                value = eval(value);
+            }
+            return {[textKey]:text, value};
+        });
+    }
+}
+
+```
+
 
 
 ## compose
@@ -78,7 +177,7 @@ let t1 = new mySetTimeout(()=>{console.log(+new Date());},1000)
 let t2 = new mySetTimeout(()=>{console.log(+new Date());},1000)
 ```
 
-#### 有并行限制的 Promise 调度器
+## 有并行限制的 Promise 调度器
 
 ```js
 class Scheduler {
