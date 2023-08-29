@@ -1,5 +1,15 @@
 # lerna 
 
+[掘金](https://juejin.cn/post/7136925215388499998)
+
+## 初始化
+
+```sh
+lerna init
+```
+
+
+
 ## lerna.json
 
 ```json
@@ -43,6 +53,8 @@
 ## 创建一个模块
 
 ```sh
+lerna create < name > [location]
+
 lerna create 【moduleName】-y
 # -y 表示使用默认配置
 ```
@@ -51,6 +63,16 @@ lerna create 【moduleName】-y
 
 ```
 npm i
+```
+
+
+
+## 为包添加依赖
+
+```sh
+lerna add <dependency> --scope <package>
+// 7.0 应直接替换成
+npm install <dependency> -w <package>
 ```
 
 

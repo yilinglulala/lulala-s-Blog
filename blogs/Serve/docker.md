@@ -64,3 +64,15 @@ cat /etc/resolv.conf
 
 nameserver 10.100.1.10
 nameserver 192.168.1.22
+
+
+
+### 复制
+
+```sh
+docker cp /home/apollo_deploy/dist web-uc-meeting-manager:/opt/web-uc-meeting-manager/server/dist
+
+docker cp /sourcePath <container-name>:/desPath
+```
+
+docker run --name web-uc-meeting-manager -v /home/apollo_deploy/dist:/opt/web-uc-meeting-manager/server/dist -d cr-dev.yealinkops.com/uc/web/web-uc-meeting-manager:46.2.0.5-xyl-4
