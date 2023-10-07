@@ -189,3 +189,18 @@ catchtap    // 会阻止冒泡
 ## 其他
 
 微信对话开放平台
+
+
+
+## WEUI
+
+### 修改页眉
+
+app.json -> window.navigationBarTitleText
+
+### 修改页面内容
+
+找到对应的wxml 进行修改
+
+
+
